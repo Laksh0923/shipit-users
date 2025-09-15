@@ -195,9 +195,17 @@ function calculate() {
 // Bug Level 5 - Issue 2: Memory overflow not handled
 function memoryAdd() {
     if (currentInput !== '') {
-        memory += parseFloat(currentInput);
-    } else {
-        memory += parseFloat(display.value);
+        const addedValue = parseFloat(currentInput);
+        
+        // Add the value to memory
+        memory += addedValue;
+        
+        // Check for memory overflow after addition
+        if (memory > Number.MAX_SAFE_INTEGER) {
+            memory = Number.MAX_SAFE_INTEGER; // Cap the memory at the max safe integer
+            // Alternatively, you could display an "Error" or "Overflow" message
+            // on the calculator screen here.
+        }
     }
     // Bug: No check for memory overflow (very large numbers)
     // Should limit memory to reasonable bounds
