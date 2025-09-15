@@ -104,7 +104,7 @@ function deleteLast() {
 // Bug Level 3 - Issue 1: Memory functions don't work with current display value
 function memoryStore() {
     if (currentInput !== '') {
-        memory = parseFloat(display.value); // Bug: Should use currentInput or display.value consistently
+        memory = parseFloat(currentInput); // Bug: Should use currentInput or display.value consistently
     }
 }
 
