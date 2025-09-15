@@ -121,8 +121,6 @@ function memoryClear() {
 function memoryAdd() {
     if (currentInput !== '') {
         memory += parseFloat(currentInput);
-    } else {
-        memory += parseFloat(display.value); // Bug: Inconsistent behavior
     }
 }
 
