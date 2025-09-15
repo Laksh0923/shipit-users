@@ -84,7 +84,7 @@ function calculate() {
     
     // Bug Level 2 - Issue 2: Floating point precision issues
     // Result should be rounded to avoid floating point errors
-    currentInput = result.toString();
+    currentInput = result.toFixed(6).toString();
     operator = '';
     previousInput = '';
     isNewCalculation = true;
